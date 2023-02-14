@@ -2,12 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:hospital_app/profile.dart';
 import './home.dart';
 import './profile.dart';
-<<<<<<< HEAD
 import './splash.dart';
 import './appointment.dart';
 import 'package:device_preview/device_preview.dart';
-=======
->>>>>>> af3cddcb6ce4ae02b4c68f0af11857786c3f0fc5
 
 void main() {
   runApp(const MyApp());
@@ -22,12 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-<<<<<<< HEAD
       debugShowCheckedModeBanner: false,
       home: WelcomeSplashScreen(),
-=======
-      home: const MyHomePage(title: 'hILTO'),
->>>>>>> af3cddcb6ce4ae02b4c68f0af11857786c3f0fc5
     );
   }
 }
@@ -47,16 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> _screens = [
     Homepag(),
     profile(),
-<<<<<<< HEAD
     Appointment()
   ];
 
-=======
-  ];
-
- 
-
->>>>>>> af3cddcb6ce4ae02b4c68f0af11857786c3f0fc5
   @override
   Widget build(BuildContext context) {
     return Scaffold(
