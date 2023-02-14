@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 
-
-
 class Appointment extends StatefulWidget {
   @override
   AppointmentState createState() => AppointmentState();
 }
 
 class AppointmentState extends State<Appointment> {
-
-
   // create a list of items for the dropdown
   var item = ['General Check-up', 'Dental', 'Eye', 'Test', 'Other'];
   var item2 = ['10:00', '10:30', '11:00', '11:30', '12:00'];
   var item3 = ['Dr. John', 'Dr. Jane', 'Dr. Joe', 'Dr. Jill', 'Dr. Jack'];
-
 
   // create a variable for the selected item
   var currentItemSelected = 'General Check-up';
@@ -26,11 +21,9 @@ class AppointmentState extends State<Appointment> {
     return Scaffold(
       body: Column(
         children: <Widget>[
-
           // Top Container that contains the title and stacked over one another
           Stack(
             children: <Widget>[
-
               // The first container that contains the blue background
               Container(
                 height: 200,
@@ -115,7 +108,6 @@ class AppointmentState extends State<Appointment> {
           // Stack widget that contains the dropdown button and a background container
           Stack(
             children: <Widget>[
-
               // The first container that contains the blue background
               Container(
                 margin: const EdgeInsets.only(
@@ -127,7 +119,7 @@ class AppointmentState extends State<Appointment> {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              
+
               // The second container that contains the title of the dropdown button
               Container(
                 child: Column(
@@ -214,7 +206,6 @@ class AppointmentState extends State<Appointment> {
                   ],
                 ),
               ),
-
 
               // The next 2 containers are the samev as the containers above
               //  The only difference is that they are used to display the time of the appointment and the specialist
@@ -364,10 +355,9 @@ class AppointmentState extends State<Appointment> {
                 ),
               ),
 
-
               // This is the submit button container
               Container(
-                margin: EdgeInsets.only(top: 400, left:130),
+                margin: EdgeInsets.only(top: 400, left: 130),
                 width: 100,
                 height: 50,
                 decoration: BoxDecoration(
@@ -377,7 +367,24 @@ class AppointmentState extends State<Appointment> {
 
                 //  The text buton which does nothing on pressed
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                                content: Text(
+                                    'Successfully Booked!'),
+
+                                // add an action to the dialog box to close the dialog box when clicked
+                                actions: [
+                                  TextButton(
+                                      onPressed: () => Navigator.pop(context),
+                                      child: Text(
+                                        'Close',
+                                        style: TextStyle(color: Colors.black),
+                                      ))
+                                ],
+                              ));
+                    },
                     child: const Text(
                       'Submit',
                       style: TextStyle(
